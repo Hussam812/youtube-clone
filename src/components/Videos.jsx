@@ -1,8 +1,7 @@
 import React from "react";
 import { Stack, Box } from "@mui/material";
 import { VideoCard, ChannelCard } from "./";
-const Videos = (videos) => {
-  console.log(videos);
+const Videos = (props) => {
   return (
     <Stack
       direction="row"
@@ -11,7 +10,7 @@ const Videos = (videos) => {
       alignItems="start"
       gap={2}
     >
-      {videos.videos.items.map((item, idx) => (
+      {props.videos.map((item, idx) => (
         <Box key={idx}>
           {item.id.videoId && <VideoCard video={item} />}
           {item.id.channelId && <ChannelCard channelDetail={item} />}
